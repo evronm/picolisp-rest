@@ -1,1 +1,1 @@
-# picolisp-rest
+Restafarianism for picolisp.
