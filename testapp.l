@@ -1,10 +1,11 @@
 
 (load "lib/rest.l")
-(pool "db")
 
 (symbols 'entities 'rst 'pico)
 
-(local) (+User +Venue +Vendor +Event)
+(local) (+User +Venue +Vendor +Event routes)
+
+(pool "db")
 
 (class +User +Rest)
   (rel id (+Key +Need +Number))
@@ -23,7 +24,7 @@
 (class +Vendor +User)
   (rel nm (+Idx +String))
   (rel vendues (+List +Joint) vendor (+Venue))
-  (rel itins (+List +Joint) vedor (+Itinerary))
+  (rel itins (+List +Joint) vendor (+Itinerary))
 
 (class +Itinerary +Rest)
   (dm T ()
@@ -37,6 +38,7 @@
   (rel vendors (+List +Joint) event (+Vendor))
   (rel venues (+List +Joint) event (+Venue))
 
+(setq nouns (get_nouns (cdr pico~entities)))
 (when *Dbg
 
 )

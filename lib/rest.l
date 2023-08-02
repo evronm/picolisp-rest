@@ -2,16 +2,18 @@
 (symbols 'rst 'r 'pico)
 
 
-(put *Indexes 'T 'id)
+(local) ('+Rest)
+
+(put *Indexes T 'id)
 
 (de get_index (Entity)
   (or (get *Indexes Entity) (get *Indexes 'T))
 )
 
-(de process_query (Q)
-
+(de get_nouns (Sym)
+  Sym
+  
 )
-
 
 (class +Rest +Entity)
   (dm owner_col> (
@@ -29,7 +31,6 @@
   (dm put> () )
   (dm delete> () )
 
-(process_query qs)
 
 (when *Dbg
 
