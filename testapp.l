@@ -38,7 +38,7 @@
   (rel vendors (+List +Joint) event (+Vendor))
   (rel venues (+List +Joint) event (+Venue))
 
-(setq nouns (get_nouns (cdr pico~entities)))
+(setq nouns (get_nouns) )
 (when *Dbg
 
 )

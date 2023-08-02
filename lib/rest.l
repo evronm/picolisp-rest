@@ -6,12 +6,12 @@
 
 (put *Indexes T 'id)
 
-(de get_index (Entity)
-  (or (get *Indexes Entity) (get *Indexes 'T))
+(de get_index (Ent)
+  (or (get '*Indexes Ent) (get '*Indexes T))
 )
 
-(de get_nouns (Sym)
-  Sym
+(de get_nouns ()
+  (filter '((M) (= '+ (car (chop M)) ))( all 'pico~entities))
   
 )
 
