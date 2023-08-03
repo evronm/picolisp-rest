@@ -1,8 +1,14 @@
 (load "lib/cgi.l")
 (symbols 'rst 'r 'pico)
 
-
 (local) ('+Rest)
+
+(de config (k)
+  (assoc k *CONFIG)
+)
+
+(pool (config 'pool))
+
 
 (put *Indexes T 'id)
 
@@ -10,9 +16,12 @@
   (or (get '*Indexes Ent) (get '*Indexes T))
 )
 
-(de get_nouns ()
-  (filter '((M) (= '+ (car (chop M)) ))( all 'pico~entities))
-  
+(de process_req ()
+  (!)
+)
+
+(de current_user () 
+  ()
 )
 
 (class +Rest +Entity)
@@ -26,10 +35,10 @@
     (or (: perms) 611)
   )
   
-  (dm get> () )
-  (dm post> () )
-  (dm put> () )
-  (dm delete> () )
+  (dm get> () prinl 'get)
+  (dm post> () prinl 'post)
+  (dm put> () prinl 'put)
+  (dm delete> () prinl 'del)
 
 
 (when *Dbg
