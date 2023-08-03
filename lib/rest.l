@@ -17,7 +17,6 @@
 )
 
 (de process_req ()
-  (!)
 )
 
 (de current_user () 
