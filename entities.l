@@ -1,6 +1,6 @@
 
 
-(symbols 'entities 'rst 'pico)
+(symbols 'entities 'rst 'r 'pico)
 
 (local) (+User +Venue +Vendor +Event)
 

@@ -1,6 +1,4 @@
 
-(symbols 'plursing 'pico)
-
 (de pluralize (S)
   ( cond
     ((= '(q u i z) S) '(q u i z z e s))

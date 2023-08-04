@@ -1,10 +1,9 @@
-(load "lib/cgi.l")
-(symbols 'rst 'r 'pico)
+(symbols 'rst 'r 'util 'pico)
 
 (local) ('+Rest)
 
 (de config (k)
-  (assoc k *CONFIG)
+  (cdr (assoc k *CONFIG))
 )
 
 (pool (config 'pool))
@@ -17,6 +16,9 @@
 )
 
 (de process_req ()
+  (setq Noun (car pth) Ns (intern (config 'ns)))
+  (setq Cls (or (isa '+Rest (intern (to_cls_nm Noun) Ns)) (intern (to_cls_nm (singularize Noun) Ns ))))
+  (send (intern req_meth) Cls pth)
 )
 
 (de current_user () 
